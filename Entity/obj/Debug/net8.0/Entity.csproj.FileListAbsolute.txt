@@ -1,0 +1,12 @@
+/Users/aidan/Desktop/learnify-fullstack/learnify/Entity/bin/Debug/net8.0/Entity.deps.json
+/Users/aidan/Desktop/learnify-fullstack/learnify/Entity/bin/Debug/net8.0/Entity.dll
+/Users/aidan/Desktop/learnify-fullstack/learnify/Entity/bin/Debug/net8.0/Entity.pdb
+/Users/aidan/Desktop/learnify-fullstack/learnify/Entity/obj/Debug/net8.0/Entity.GeneratedMSBuildEditorConfig.editorconfig
+/Users/aidan/Desktop/learnify-fullstack/learnify/Entity/obj/Debug/net8.0/Entity.AssemblyInfoInputs.cache
+/Users/aidan/Desktop/learnify-fullstack/learnify/Entity/obj/Debug/net8.0/Entity.AssemblyInfo.cs
+/Users/aidan/Desktop/learnify-fullstack/learnify/Entity/obj/Debug/net8.0/Entity.csproj.CoreCompileInputs.cache
+/Users/aidan/Desktop/learnify-fullstack/learnify/Entity/obj/Debug/net8.0/Entity.dll
+/Users/aidan/Desktop/learnify-fullstack/learnify/Entity/obj/Debug/net8.0/refint/Entity.dll
+/Users/aidan/Desktop/learnify-fullstack/learnify/Entity/obj/Debug/net8.0/Entity.pdb
+/Users/aidan/Desktop/learnify-fullstack/learnify/Entity/obj/Debug/net8.0/ref/Entity.dll
+/Users/aidan/Desktop/learnify-fullstack/learnify/Entity/obj/Debug/net8.0/Entity.sourcelink.json
