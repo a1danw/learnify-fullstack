@@ -1,1 +1,66 @@
-.idea
+# macOS
+.DS_Store
+
+# Node/React
+client/node_modules/
+client/build/
+client/.env.local
+client/.env.development.local
+client/.env.test.local
+client/.env.production.local
+client/.next/
+client/.cache/
+client/yarn-error.log
+client/npm-debug.log
+client/.eslintcache
+
+# VSCode/IDE
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# ASP.NET/.NET
+bin/
+obj/
+*.user
+*.vspscc
+*.vssscc
+*.dbmdl
+*.pdb
+*.cache
+*.log
+*.ncrunch*
+*.localhistory
+*.suo
+*.sdf
+*.opensdf
+*.v12.suo
+*.DS_Store
+
+# Entity Framework
+Migrations/
+
+# ASP.NET secrets
+API/appsettings.Development.json
+API/appsettings.Local.json
+API/appsettings.*.json.user
+
+# Logs
+*.log
+
+# Test results
+TestResults/
+*.trx
+
+# Publish output
+publish/
+out/
+
+# Others
+*.swp
+*.tmp
+*.bak
+*.orig
