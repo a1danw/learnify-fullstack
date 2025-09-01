@@ -5,22 +5,31 @@
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg" alt="dotnetcore" width="40" height="40"/>
 </div>
 
-### 🚀 Features
+### 🛠️ Technical Stack
 
-- **Repository & Specification Patterns** for clean, maintainable data access
-- **Domain-Driven Design** with layered architecture (API, Infrastructure, Entity, Client)
-- **ASP.NET Identity** for secure authentication and registration
-- **React Router v6** for seamless client-side navigation
-- **Redux Toolkit** for centralized, scalable state management
-- **AutoMapper** for efficient DTO mapping and response shaping
+- **Backend:** ASP.NET Core 6, Entity Framework Core, AutoMapper, ASP.NET Identity, Redis, Stripe API
+- **Frontend:** React 18, TypeScript, Redux Toolkit, Axios, SASS, React Router v6
+- **Database:** SQL Server (or PostgreSQL for production), Redis (basket)
+- **DevOps:** Heroku deployment, environment-based configuration
+
+---
+
+### 🏗️ Features
+
+- **Repository & Specification Patterns** for clean, maintainable data access.
+- **Domain-Driven Design** with layered architecture (API, Infrastructure, Entity, Client).
+- **ASP.NET Identity** for secure authentication and registration.
+- **React Router v6** for seamless client-side navigation.
+- **Redux Toolkit** for centralized, scalable state management.
+- **AutoMapper** for efficient DTO mapping and response shaping.
 - **Axios** for robust API communication
-- **Custom UI** built with SASS and Ant Design
+- **Custom UI** built with SASS and Ant Design.
 - **Course rating, sorting, search, and filtering**
-- **Redis** as an in-memory store for shopping cart/basket
-- **Stripe** integration for secure, 3D Secure payments
-- **YouTube Embedded Player** for video lectures
-- **Instructor role** with course and section creation
-- **TypeScript** throughout for type safety and maintainability
+- **Redis** as an in-memory store for shopping cart/basket.
+- **Stripe** integration for secure, 3D Secure payments.
+- **YouTube Embedded Player** for video lectures.
+- **Instructor role** with course and section creation.
+- **TypeScript** throughout for type safety and maintainability.
 
 <div align="center">
 <table>
@@ -111,15 +120,6 @@ Everything you need to build a real SaaS application.
 
 ---
 
-### 🛠️ Technical Stack
-
-- **Backend:** ASP.NET Core 6, Entity Framework Core, AutoMapper, ASP.NET Identity, Redis, Stripe API
-- **Frontend:** React 18, TypeScript, Redux Toolkit, Axios, SASS, React Router v6
-- **Database:** SQL Server (or PostgreSQL for production), Redis (basket)
-- **DevOps:** Heroku deployment, environment-based configuration
-
----
-
 ### 📦 Project Structure
 
 ```
@@ -131,7 +131,7 @@ learnify/
 └── ...              # Config, migrations, deployment scripts
 ```
 
-### 🚀 Get Started
+### 🏃‍♂️ Get Started
 
 1. **Clone the repo:**
    `git clone https://github.com/yourusername/learnify-fullstack.git`
