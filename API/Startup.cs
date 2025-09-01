@@ -27,7 +27,6 @@ namespace API
             // created when the http comes to the api, controller then knows to create the repository until after the request is finished, it then disposes of the controller and repository
             services.AddScoped<ICourseRepository, CourseRepository>(); // repository lifecycle
             services.AddScoped<ICategoryRepository, CategoryRepository>();
-            // generic repository
             services.AddScoped(typeof(IGenericRepository<>), (typeof(GenericRepository<>)));
             // map dto's
             services.AddAutoMapper(typeof(MappingProfiles));

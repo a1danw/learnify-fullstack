@@ -34,17 +34,18 @@ namespace API.Controllers
             // var courses = await _repository.GetCoursesAsync(); - replaced with generic
             return Ok(_mapper.Map<IReadOnlyList<Course>, IReadOnlyList<CourseDto>>(courses));
             // return Ok(courses); // 200 response along with all courses
-            // return await _context.Courses.ToListAsync(); // Retrieve all courses from the database
+            // return await _context.Courses.ToListAsync();
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<CourseDto>> GetCourse(Guid id)
         {
-            var course = await _repository.GetByIdAsync(id);
+            var spec = new CoursesWithCategoriesSpecification(id);
+            var course = await _repository.GetEntityWithSpec(spec);
             // var course = await _repository.GetCourseByIdAsync(id);
             return _mapper.Map<Course, CourseDto>(course);
             // return await _repository.GetCourseByIdAsync(id);
-            // return await _context.Courses.FindAsync(id); // Find a course by ID in the database
+            // return await _context.Courses.FindAsync(id);
         }
     }
 }

@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure
 {
+    // course/category do the same job so it can be abstracted
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
         private readonly StoreContext _context;

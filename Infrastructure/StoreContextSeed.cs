@@ -11,7 +11,7 @@ namespace Infrastructure
 {
     public class StoreContextSeed
     {
-        // Static method to seed initial data into the database
+        // Static method to seed initial data into the db
         public static async Task SeedAsync(StoreContext context, ILogger logger)
         {
 
@@ -21,7 +21,7 @@ namespace Infrastructure
                 {
                     // Read JSON data from a file
                     var categoryData = File.ReadAllText("../Infrastructure/SeedData/categories.json");
-                    // Deserialize JSON data into a list of category objects. Serialize the file into the object
+                    // Deserialize JSON data into a list of category objects. Serialize the file into the obj
                     var categories = JsonSerializer.Deserialize<List<Category>>(categoryData);
 
                     // Add each category to the Categories DbSet
@@ -29,7 +29,7 @@ namespace Infrastructure
                     {
                         context.Categories.Add(item);
                     }
-                    // Save changes to the database
+                    // Save changes to the db
                     await context.SaveChangesAsync();
                 }
 
@@ -46,7 +46,7 @@ namespace Infrastructure
                   {
                       context.Courses.Add(item);
                   }
-                  // Save changes to the database
+                  // Save changes to db
                   await context.SaveChangesAsync();
                 }
 

@@ -1,3 +1,5 @@
+using System;
+
 namespace Entity.Specifications
 {
     public class CoursesWithCategoriesSpecification : BaseSpecification<Course>
@@ -6,7 +8,9 @@ namespace Entity.Specifications
         {
             IncludeMethod(x => x.Category);
         }
-        
-       
+
+        public CoursesWithCategoriesSpecification(Guid id) : base(x => x.Id == id)
+        {
+        }
     }
 }
