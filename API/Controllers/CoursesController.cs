@@ -12,7 +12,7 @@ namespace API.Controllers
 {
     public class CoursesController : BaseController
     {
-        // private readonly StoreContext _context; // StoreContext is a database context for Entity Framework
+        // private readonly StoreContext _context; // StoreContext is a db context for Entity Framework
         // private readonly ICourseRepository _repository;
         private readonly IGenericRepository<Course> _repository;
         private readonly IMapper _mapper;
@@ -21,7 +21,6 @@ namespace API.Controllers
         public CoursesController(IGenericRepository<Course> repository, IMapper mapper) // (StoreContext context)
         {
             _mapper = mapper;
-            // abstract db via repository pattern instead
             _repository = repository;
             // _context = context;
         }

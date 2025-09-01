@@ -15,14 +15,14 @@ namespace API.Controllers
         private readonly IMapper _mapper;
         private readonly IGenericRepository<Category> _repository;
         // ICategoryRepository repository, IMapper mapper - replaced with generic
-        public CategoriesController(IGenericRepository<Category> repository, IMapper mapper) // inject ICategoryRepository & IMapper
+        public CategoriesController(IGenericRepository<Category> repository, IMapper mapper)
         {
             _mapper = mapper;
             _repository = repository;
         }
 
         [HttpGet]
-        public async Task<ActionResult<IReadOnlyList<CategoriesDto>>> GetCategories() // get all categories
+        public async Task<ActionResult<IReadOnlyList<CategoriesDto>>> GetCategories()
         {
             var categories = await _repository.ListAllAsync();
             // var categories = await _repository.GetCategoriesAsync();
