@@ -25,6 +25,11 @@ client/.eslintcache
 # ASP.NET/.NET
 bin/
 Entity/bin/
+Entity/obj/
+Infrastructure/bin/
+Infrastructure/obj/
+API/bin/
+API/obj/
 obj/
 *.user
 *.vspscc
