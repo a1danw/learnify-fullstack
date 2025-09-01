@@ -20,8 +20,7 @@ namespace Infrastructure
         {
             // return await _context.Courses.FindAsync(id);
             // eager loading
-            return await _context
-                .Courses
+            return await _context.Courses
                 .Include(c => c.Category)
                 .Include(c => c.Requirements)
                 .Include(c => c.Learnings)
@@ -31,8 +30,7 @@ namespace Infrastructure
         public async Task<IReadOnlyList<Course>> GetCoursesAsync()
         {
             // return await _context.Courses.ToListAsync();
-            return await _context
-                .Courses
+            return await _context.Courses
                 .Include(c => c.Category)
                 .ToListAsync();
         }

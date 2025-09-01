@@ -139,7 +139,6 @@ learnify/
 2. **Backend:**
 
    - `cd API`
-   - Configure your connection strings and environment variables
    - `dotnet ef database update`
    - `dotnet run`
 
