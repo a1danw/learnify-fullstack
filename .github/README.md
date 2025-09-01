@@ -1,9 +1,9 @@
 ## Learnify – Fullstack Learning Platform 📚
 
+<div style="display: flex; flex-direction: row; align-items: center;">
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg" alt="dotnetcore" width="40" height="40"/>
-
-</h2>
+</div>
 
 ### 🚀 Features
 
@@ -17,7 +17,7 @@
 - **Custom UI** built with SASS and Ant Design
 - **Course rating, sorting, search, and filtering**
 - **Redis** as an in-memory store for shopping cart/basket
-- **Stripe** integration for secure, 3D Secure payments (EU compliant)
+- **Stripe** integration for secure, 3D Secure payments
 - **YouTube Embedded Player** for video lectures
 - **Instructor role** with course and section creation
 - **TypeScript** throughout for type safety and maintainability
