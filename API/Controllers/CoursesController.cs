@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using API.Dto;
+using API.Helpers;
 using AutoMapper;
 using Entity;
 using Entity.Interfaces;
@@ -26,12 +27,17 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<CourseDto>>> GetCourses()
+        public async Task<ActionResult<Pagination<CourseDto>>> GetCourses([FromQuery] CourseParams courseParams) // string sort, int? categoryId
         {
-            var spec = new CoursesWithCategoriesSpecification();
+            var spec = new CoursesWithCategoriesSpecification(courseParams);
+            var countSpec = new CoursesFilterCountSpecification(courseParams);
+            var total = await _repository.CountResultAsync(countSpec);
             var courses = await _repository.ListWithSpec(spec);
+            var data = _mapper.Map<IReadOnlyList<Course>, IReadOnlyList<CourseDto>>(courses);
+
+            // api/courses?pageIndex=2&pageSize=8
+            return Ok(new Pagination<CourseDto>(courseParams.PageIndex ?? 1, courseParams.PageSize, total, data));
             // var courses = await _repository.GetCoursesAsync(); - replaced with generic
-            return Ok(_mapper.Map<IReadOnlyList<Course>, IReadOnlyList<CourseDto>>(courses));
             // return Ok(courses); // 200 response along with all courses
             // return await _context.Courses.ToListAsync();
         }

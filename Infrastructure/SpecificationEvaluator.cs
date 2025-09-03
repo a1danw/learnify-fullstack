@@ -14,10 +14,25 @@ namespace Infrastructure
 
             if(spec.Criteria != null) // example: c => c.Price < 10
             {
-                query = query.Where(spec.Criteria); // returns true/false
+                query = query.Where(spec.Criteria); // x => x.Id == id - true/false
             }
-            query = spec.Include.Aggregate(query, (current, include) => current.Include(include));
 
+            if(spec.Sort != null)
+            {
+                query = query.OrderBy(spec.Sort);
+            }
+
+            if(spec.SortByDescending != null)
+            {
+                query = query.OrderByDescending(spec.SortByDescending);
+            }
+
+            if(spec.IsPaging)
+            {
+                query = query.Skip(spec.Skip).Take(spec.Take);
+            }
+
+            query = spec.Include.Aggregate(query, (current, include) => current.Include(include));
             return query;
         }
     }

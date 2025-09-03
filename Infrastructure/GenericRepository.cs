@@ -41,5 +41,10 @@ namespace Infrastructure
         {
             return SpecificationEvaluator<T>.GetQuery(_context.Set<T>().AsQueryable(), spec);
         }
+
+        public async Task<int> CountResultAsync(ISpecification<T> spec)
+        {
+            return await ApplySpec(spec).CountAsync();
+        }
     }
 }

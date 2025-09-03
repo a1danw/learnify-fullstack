@@ -12,5 +12,6 @@ namespace Entity.Interfaces
         Task<T> GetByIdAsync(dynamic id);
         Task<T> GetEntityWithSpec(ISpecification<T> spec);
         Task<IReadOnlyList<T>> ListWithSpec(ISpecification<T> spec);
+        Task<int> CountResultAsync(ISpecification<T> spec);
     }
 }
