@@ -10,6 +10,8 @@ namespace Entity.Specifications
             (!courseParams.CategoryId.HasValue || x.CategoryId == courseParams.CategoryId)) // api/courses?categoryId=1
         {
             IncludeMethod(x => x.Category);
+            IncludeMethod(c => c.Requirements);
+            IncludeMethod(c => c.Learnings);
             // courseParams.PageSize * (courseParams.PageIndex - 1)
             ApplyPagination(courseParams.PageSize, courseParams.PageSize * ((courseParams.PageIndex ?? 1) - 1)); // api/courses?pageIndex=2 / pageSize=10&pageIndex=2
 
@@ -35,6 +37,8 @@ namespace Entity.Specifications
         {
             IncludeMethod(c => c.Requirements);
             IncludeMethod(c => c.Learnings);
+            IncludeMethod(c => c.Category);
+            SortMethod(x => x.Id);
         }
     }
 }

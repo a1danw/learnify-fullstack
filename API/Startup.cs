@@ -18,7 +18,7 @@ namespace API
     public class Startup
     {
         private readonly IConfiguration _config;
-        public Startup(IConfiguration config) // inject configuration into startup class
+        public Startup(IConfiguration config)
         {
             _config = config; // Injecting IConfiguration for accessing configuration settings - gives us access to variables inside appsettings.development.json and appsettings.json
         }
@@ -40,7 +40,8 @@ namespace API
             // register db
             services.AddDbContext<StoreContext>(x =>
             {
-                x.UseSqlite(_config.GetConnectionString("DefaultConnection")); // Using SQLite as the database provider
+                x.UseSqlite(_config.GetConnectionString("DefaultConnection"), // Using SQLite as the database provider
+                x => x.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery)); // split single queries for joins
             });
             // allow any frontend requests from localhost:3000
             services.AddCors(opt =>
