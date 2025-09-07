@@ -19,6 +19,7 @@ namespace Infrastructure
         public DbSet<Requirement> Requirements {get; set;}
 
         public DbSet<Learning> Learnings {get; set;}
+        public DbSet<Basket> Baskets {get; set;}
 
         // configure entity mappings before interacting with db - CourseConfiguration etc
         protected override void OnModelCreating(ModelBuilder builder)
