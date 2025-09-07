@@ -48,7 +48,8 @@ namespace API
             {
                 opt.AddPolicy("CorsPolicy", policy =>
                 {
-                    policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:3002");
+                    policy.AllowAnyHeader().AllowAnyMethod().AllowCredentials()
+                    .WithOrigins("http://localhost:3002");
                 });
             });
             // Configuring Swagger
