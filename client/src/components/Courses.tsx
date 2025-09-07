@@ -1,13 +1,15 @@
-import React, { useState, useLayoutEffect, useEffect } from "react";
-import agent from "../actions/agent"; // for api requests
-import { Card, Col, Row } from "antd";
-import * as FaIcons from "react-icons/fa";
+import React, { useEffect, useLayoutEffect, useState } from "react";
+import { Card, Col } from "antd";
 import { Course } from "../models/course";
-// import { PaginatedCourse } from "../models/paginatedCourse";
+import * as FaIcons from "react-icons/fa";
+import { Link } from "react-router-dom";
 
-const Courses = () => {
-  const [courses, setCourses] = useState<Course[]>([]);
-  // const [data, setData] = useState<PaginatedCourse>();
+interface Props {
+  course: Course;
+  index: number;
+}
+
+const Courses = ({ course, index }: Props) => {
   const [spanVal, setSpanVal] = useState<number>();
   const [loading, setLoading] = useState(false);
 
@@ -28,13 +30,7 @@ const Courses = () => {
   }, []);
 
   useEffect(() => {
-    agent.Courses.list().then((response) => {
-      setCourses(response);
-      // setLoading(true)
-      // setData(response)
-      // setLoading(false)
-      checkWidth();
-    });
+    checkWidth();
   }, []);
 
   const showStars = (rating: number): [] => {
@@ -50,57 +46,25 @@ const Courses = () => {
   };
 
   return (
-    <div className="course">
-      <div className="course__header">
-        <h1>What to Learn Next?</h1>
-        <h2>New Courses picked just for you...</h2>
-      </div>
-      <Row gutter={[24, 32]}>
-        {courses.map((course, index: number) => {
-          return (
-            <Col key={index} className="gutter-row" span={spanVal}>
-              <Card
-                bordered={false}
-                hoverable
-                cover={
-                  <img width="100%" alt="course-cover" src={course.image} />
-                }
-              >
-                <div className="course__title">{course.title} </div>
-                <div className="course__instructor">{course.instructor} </div>
-                <div className="course__rating">
-                  {course.rating}
-                  <span> {showStars(course.rating)}</span>
-                </div>
-                <div className="course__price">{`$ ${course.price}`}</div>
-              </Card>
-            </Col>
-          );
-        })}
-        {/* {data &&
-          data.data.map((course: Course, index: number) => {
-            return (
-              <Col key={index.toString()} className="gutter-row" span={spanVal}>
-                <Card
-                  hoverable
-                  loading={loading}
-                  cover={
-                    <img width="100%" alt="course-cover" src={course.image} />
-                  }
-                >
-                  <div className="course__title">{course.title} </div>
-                  <div className="course__instructor">{course.instructor} </div>
-                  <div className="course__rating">
-                    {course.rating}
-                    <span> {showStars(course.rating)}</span>
-                  </div>
-                  <div className="course__price">{`$ ${course.price}`}</div>
-                </Card>
-              </Col>
-            );
-          })} */}
-      </Row>
-    </div>
+    <>
+      <Col className="gutter-row" span={spanVal}>
+        <Link to={`/course/${course.id}`}>
+          <Card
+            bordered={false}
+            hoverable
+            cover={<img width="100%" alt="course-cover" src={course.image} />}
+          >
+            <div className="course__title">{course.title} </div>
+            <div className="course__instructor">{course.instructor} </div>
+            <div className="course__rating">
+              {course.rating}
+              <span> {showStars(course.rating)}</span>
+            </div>
+            <div className="course__price">{`$ ${course.price}`}</div>
+          </Card>
+        </Link>
+      </Col>
+    </>
   );
 };
 

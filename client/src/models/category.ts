@@ -1,7 +1,7 @@
-import { Course } from './course'
+import { Course } from "./course";
 
 export interface Category {
-  id: number
-  name: string
-  courses: Course[] | [] | null
+  id: number;
+  name: string;
+  courses: Course[] | [] | null;
 }

@@ -1,7 +1,8 @@
 import axios, { AxiosError, AxiosResponse } from "axios";
 import { Course } from "../models/course";
+import { PaginatedCourse } from "../models/paginatedCourse";
 // import { PaginatedCourse } from '../models/paginatedCourse'
-// import { Category } from '../models/category'
+import { Category } from "../models/category";
 // import { Course, RegisterCourse } from '../models/course'
 // import { Basket } from '../models/basket'
 // import { Login, Register, User } from '../models/user'
@@ -95,19 +96,19 @@ const requests = {
 
 // param gets appended to base url
 const Courses = {
-  list: () => requests.get<Course[]>("/courses"),
+  list: () => requests.get<PaginatedCourse[]>("/courses"),
   // list: (params?: URLSearchParams) =>
   //   requests.get<PaginatedCourse>('/courses', params),
-  // getById: (id: string) => requests.get<Course>(`/courses/${id}`),
+  getById: (id: string) => requests.get<Course>(`/courses/${id}`),
   // create: (data: RegisterCourse) => requests.post < string > ('courses', data),
   //   publish: (courseId: string) =>
   //   requests.post < string > (`courses/publish/${courseId}`, {}),
 };
 
-// const Categories = {
-//   list: () => requests.get<Category[]>('/categories'),
-//   getCategory: (id: number) => requests.get<Category>(`/categories/${id}`),
-// }
+const Categories = {
+  list: () => requests.get<Category[]>("/categories"),
+  getCategory: (id: number) => requests.get<Category>(`/categories/${id}`),
+};
 
 // const Baskets = {
 //   get: () => requests.get<Basket>('basket'),
@@ -136,7 +137,7 @@ const Courses = {
 // carry all types of requests
 const agent = {
   Courses,
-  // Categories,
+  Categories,
   // Baskets,
   // Users,
   // Payments,

@@ -1,38 +1,38 @@
-import { createContext, PropsWithChildren, useContext, useState } from 'react'
-import { Basket } from '../models/basket'
+import { createContext, PropsWithChildren, useContext, useState } from "react";
+import { Basket } from "../models/basket";
 
 interface StoreContextValue {
-  basket: Basket | null
-  setBasket: (basket: Basket) => void
-  removeItem: (courseId: string) => void
+  basket: Basket | null;
+  setBasket: (basket: Basket) => void;
+  removeItem: (courseId: string) => void;
 }
 
 export const StoreContext = createContext<StoreContextValue | undefined>(
-  undefined,
-)
+  undefined
+);
 
 export function useStoreContext() {
-  const context = useContext(StoreContext)
+  const context = useContext(StoreContext);
 
   if (context === undefined) {
-    throw Error('The Store context is currently undefined')
+    throw Error("The Store context is currently undefined");
   }
 
-  return context
+  return context;
 }
 
 export function StoreProvider({ children }: PropsWithChildren<any>) {
-  const [basket, setBasket] = useState<Basket | null>(null)
+  const [basket, setBasket] = useState<Basket | null>(null);
 
   function removeItem(courseId: string) {
-    if (!basket) return
-    const items = [...basket.items]
-    const itemIndex = items.findIndex((i) => i.courseId === courseId)
+    if (!basket) return;
+    const items = [...basket.items];
+    const itemIndex = items.findIndex((i) => i.courseId === courseId);
     if (itemIndex >= 0) {
-      items.splice(itemIndex, 1)
+      items.splice(itemIndex, 1);
       setBasket((prevState) => {
-        return { ...prevState!, items }
-      })
+        return { ...prevState!, items };
+      });
     }
   }
 
@@ -40,5 +40,5 @@ export function StoreProvider({ children }: PropsWithChildren<any>) {
     <StoreContext.Provider value={{ basket, setBasket, removeItem }}>
       {children}
     </StoreContext.Provider>
-  )
+  );
 }

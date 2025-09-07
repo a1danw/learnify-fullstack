@@ -1,8 +1,8 @@
-import { Course } from './course'
+import { Course } from "./course";
 
 export interface PaginatedCourse {
-  pageIndex: number
-  count: number
-  pageSize: number
-  data: Course[]
+  pageIndex: number;
+  count: number;
+  pageSize: number;
+  data: Course[];
 }
